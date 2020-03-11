@@ -1,0 +1,11 @@
+1. How to use Azure Mysql Database
+
+
+server name : maunghtayserver
+ user name : maunghtaymysql
+ pass      : Mghtay&172255
+
+String url ="jdbc:mysql://maunghtayserver.mysql.database.azure.com:3306/{your_database}?useSSL=true&requireSSL=false"; myDbConn = DriverManager.getConnection(url, "maunghtaymysql@maunghtayserver", {your_password});
+
+
+mysql --host maunghtayserver.mysql.database.azure.com --user maunghtaymysql@maunghtayserver -p

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="UTF-8">
+<title>Home Page</title>
+</head>
+
+<body>
+	<form th:action="@{/logout}" method="post">
+		<div align="center" style="margin-top: 50px;">
+			<p>
+				Welcome <span th:if="${loginUserName != null}"
+					th:text="${loginUserName}"></span>
+			</p>
+
+			<br />
+			<table border="1" cellpadding="10">
+				<thead>
+					<tr>
+						<th>User ID</th>
+						<th>User Name</th>
+						<th>User PhoneNo</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="product : ${userinfoList}">
+						<td th:text="${product.userId}">User ID</td>
+						<td th:text="${product.userName}">User Name</td>
+						<td th:text="${product.userPhoneNo}">User PhoneNo</td>
+						<td th:text="${product.userEmailAddress}">Email</td>
+						
+					</tr>
+				</tbody>
+			</table>
+
+			<br />
+
+			<button type="submit">LOGOUT</button>
+		</div>
+	</form>
+
+
+
+</body>
+</html>

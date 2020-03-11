@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="UTF-8">
+<title>Login Security</title>
+</head>
+<body>
+	<form th:action="@{/user_register}" th:object="${userInfo}" method="post">
+		<div align="center" style="margin-top:50px;">
+			<div>
+				<label> UserName: <input type="text"
+					th:field="*{userName}" />
+				</label>
+			</div><br>
+			<div>
+				<label> Password : <input type="password"
+					th:field="*{userPassword}" />
+				</label>
+			</div><br>
+			
+			<div>
+				<label> PhoneNo : <input type="text"
+					th:field="*{userPhoneNo}" />
+				</label>
+			</div><br>
+			
+			<div>
+				<label> UserEmail: <input type="text"
+					th:field="*{userEmailAddress}" />
+				</label>
+			</div><br>
+			
+			<div>
+				<span th:if="${registerError != null}" style="color: red;">Please Insert data in fields at lease UserName and Password</span>
+			</div>
+			
+			<div>
+				<input type="submit" value="Register" name="register"/>
+				<input type="submit" value="Cancel" name="cancel"/>
+			</div><br>
+			
+		
+		</div>
+	</form>
+
+
+</body>
+</html>
